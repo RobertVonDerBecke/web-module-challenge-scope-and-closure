@@ -149,9 +149,27 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(getScoreCb, setScoreCb, inningsPlayed) {
+  let arrResults = [];
+  let homeTotal = 0;
+  let awayTotal = 0;
+  for(let i =0; i< inningsPlayed; i++){
+    let temp = setScoreCb(getScoreCb);
+    arrResults.push(temp);
+    homeTotal += setScoreCb(getScoreCb).Home;
+    awayTotal += setScoreCb(getScoreCb).Away;
+  }
+  
+  if(homeTotal === awayTotal){
+    arrResults.push(`This game will require extra inning: ` + 'Away ' + awayTotal + ' Home ' + homeTotal)
+    return arrResults;
+  }else {
+    arrResults.push(`Final Score: ` + ' Away ' + awayTotal + ' Home ' + homeTotal)
+    return arrResults;
+
+  }
 }
+console.log(scoreboard(inning,getInningScore,10));
 
 
 
