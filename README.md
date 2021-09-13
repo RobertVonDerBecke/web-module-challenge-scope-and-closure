@@ -59,6 +59,7 @@ You will be running your tests in one terminal and debugging in the other. As yo
 Edit the `ReadMe` file with your answers to the questions below.
 
 1. In your own words, define closure (1-2 sentences).
+when a function reaches out to another function to get something.
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -80,8 +81,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+When the variable 'name' reaches out to personal dice for the information that is doesnt have it is looking out of its own scope
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+The value of 'newRoll' is random and can change, the variable 'name' is constant unless passed in differently.
 c. What is the lexical scope of `newRoll`? 
+Block Scope
 
 
 ### Task 3 - Stretch Goals
